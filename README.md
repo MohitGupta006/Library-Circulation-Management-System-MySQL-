@@ -111,6 +111,7 @@ Insert Into books (isbn, book_title, category, rental_price, status, author, pub
 Values( '978-1-60129-456-2', 'To Kill a Mockingbird', 'Classic', 6.00, 'yes', 'Harper Lee', 'J.B. Lippincott & Co.');
 Select * From books;
 ```
+---
 #### Task 2: Update an Existing Member's Address
 ```sql
 UPDATE members
@@ -118,17 +119,20 @@ SET member_address ='125 Main St'
 WHERE member_id = 'C101';
 Select * From Members;
 ```
+---
 #### Task 3: Delete a Record from the Issued Status Table -- Objective: Delete the record with issued_id = 'IS121' from the issued_status table.
 ```sql
 Delete From issued_status
 WHERE   issued_id =   'IS121';
 Select * From issued_status;
 ```
+---
 #### Task 4: Retrieve All Books Issued by a Specific Employee -- Objective: Select all books issued by the employee with emp_id = 'E101'
 ```sql
 SELECT * FROM issued_status
 where issued_emp_id = 'E101'
 ```
+---
 #### Task 5: List Members Who Have Issued More Than One Book -- Objective: Use GROUP BY to find members who have issued more than one book.
 ```sql
 SELECT
@@ -138,6 +142,7 @@ FROM issued_status
 GROUP BY 1
 HAVING Count(*) > 1
 ```
+---
 #### Task 6: Create Summary Tables: Used CTAS to generate new tables based on query results - each book and total book_issued_cnt** joining books and issued_status table on the basis of isbn
 ```sql
 Select * 
@@ -158,15 +163,14 @@ ON
 ist.issued_book_isbn = b.isbn
 Group By 1,2;
 ```
+---
 #### Task 7. Retrieve All Books in a Specific Category: 'Classic'
 ```sql
 Select * From books
 WHERE category = 'Classic'
 ```
 ---
-#### Task 8: Find Total Rental Income by each Category:
-
-##### join books and issued_status as to find a total rental income as to find how many times a book have been issued to find the correct rental icome
+#### Task 8: Find Total Rental Income by each Category:join books and issued_status as to find a total rental income as to find how many times a book have been issued to find the correct rental icome
 ```sql
 Select * 
 FROM books as b 
@@ -185,6 +189,7 @@ ON
 ist.issued_book_isbn = b.isbn 
 GROUP BY 1
 ```
+---
 #### Task 9: List Members Who Registered in the Last 180 Days:
 ```sql
 SELECT * 
@@ -196,6 +201,7 @@ values
 ('C130','Trump', '128 Washington DC', '2026-01-02'),
 ('C140','Modi', '125 New Delhi', '2025-12-30');
 ```
+---
 #### Task 10: List Employees with Their Branch Manager's Name and their branch details:
 ```sql
 SELECT 
@@ -213,12 +219,14 @@ JOIN
 employees as e2
 ON e2.emp_id = b.manager_id
 ```
+---
 #### Task 11. Create a Table of Books with Rental Price Above a Certain Threshold 7:
 ```sql
 Create Table expensive_books
 Select * From books
 WHERE rental_price > 7
 ```
+---
 #### Task 12: Retrieve the List of Books Not Yet Returned
 ```sql
 Select 
