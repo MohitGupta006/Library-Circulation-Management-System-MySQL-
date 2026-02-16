@@ -1,8 +1,17 @@
 # Library-Circulation-Management-System-MySQL
 Library Management System built on MySQL using normalized relational schema design, primary and foreign key constraints, CRUD operations, stored procedures, CTAS, CTEs, and transactional logic. Implements circulation workflows, overdue analytics, fine computation, and branch-level performance reporting.
 
+## Objectives
+1) To design and implement a normalized relational database schema with primary and foreign key constraints.
+2) To perform complete CRUD (Create, Read, Update, Delete) operations for managing books, members, employees, and branches.
+3) To implement CTAS (Create Table As Select) for generating summary and reporting tables.
+4) To automate circulation workflows using stored procedures and procedural SQL logic.
+
 ---
 ### ERD Diagram 
+The ER diagram represents a relational Library Management System consisting of books, members, employees, branches, issued_status, and return_status entities. It establishes primary–foreign key relationships to manage book circulation, track issuance and returns, and maintain branch-level operational integrity.
+It ensures referential integrity and structured data flow across library transactions.
+
 <img width="1227" height="798" alt="Screenshot 2026-02-16 220430" src="https://github.com/user-attachments/assets/f98cc081-7423-42a2-98ac-67c0ac043ea5" />
 
 ---
